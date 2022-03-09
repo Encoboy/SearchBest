@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getProTtrendData } from "../redux/action";
 
@@ -7,9 +7,12 @@ export default function Search() {
   let inputRef = useRef();
   let dispatch = useDispatch();
   let navigate = useNavigate();
-
+  const location = useLocation();
   let toProductTrendsPage = () => {
-    navigate("/search/" + inputRef.current.value.replace(/\s+/g, "+"));
+    navigate("/search/" + inputRef.current.value.replace(/\s+/g, "+"), {
+      replace: location.pathname?.includes("search") ? true : false,
+    });
+    dispatch({ type: "proTrendData", product_trends: [] });
     dispatch(
       getProTtrendData({
         method: "/interview/keyword_search",

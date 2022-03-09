@@ -2,6 +2,7 @@ export default class Http {
   static postMethod({ successFn, method, params }) {
     let contentType = "application/json;charset=UTF-8";
     let headUrlStr = "http://3.141.23.218:5000";
+    window.loading = false;
     fetch(headUrlStr + method, {
       method: "POST",
       headers: { "Content-Type": contentType },

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import LoadingCom from "../component/loadingCom";
 export default function ProductTrends() {
   let data = useSelector((state) => state.product_trends);
+  console.log(data);
   return (
     <div>
       <div style={{ fontSize: "0.16rem" }}>Related product trends</div>

@@ -1,4 +1,4 @@
-import Http from "../Api/http";
+import Http from "../Api.js/http";
 
 export const getProTtrendData = (value) => {
   return (dispatch) => {
