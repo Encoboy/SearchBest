@@ -12,3 +12,5 @@ react-redux 7.2.6
 redux-thunk 2.4.1  
 less 4.1.2  
 webpack 5.64.4
+
+## 完成进度 80%
