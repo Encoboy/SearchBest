@@ -1,24 +1,16 @@
 import React from "react";
+import styles from "./loadingCom.less";
 
-export default function LoadingCom() {
-  let data = ["", "", "", ""];
+export default function LoadingCom(props) {
   return (
-    <div style={{ display: "flex", justifyContent: "space-around" }}>
-      {data.map((item, index) => {
+    <>
+      {new Array(props.nums).fill("").map((item, index) => {
         return (
-          <div
-            style={{
-              width: "1rem",
-              height: "1rem",
-              backgroundColor: "lightgray",
-              marginLeft: "0.1rem",
-            }}
-            key={index}
-          >
+          <div className={styles.loading} key={index}>
             {item}
           </div>
         );
       })}
-    </div>
+    </>
   );
 }

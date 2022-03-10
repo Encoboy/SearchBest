@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getProTtrendData } from "../redux/action";
+import { debounce } from "../Utils/utils";
 import styles from "./SearchBar.less";
 
 export default function Search() {
@@ -30,7 +31,11 @@ export default function Search() {
       <div className={styles.bar_title}>
         <span>Beset</span>Search
       </div>
-      <input className={styles.bar_input} ref={inputRef} />
+      <input
+        onChange={debounce(toProductTrendsPage, 2000)}
+        className={styles.bar_input}
+        ref={inputRef}
+      />
       <div className={styles.bar_btn} onClick={toProductTrendsPage}>
         按钮
       </div>

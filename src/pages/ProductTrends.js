@@ -1,33 +1,31 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import LoadingCom from "../component/loadingCom";
+import styles from "./ProductTrends.less";
+const oneRowLen = 4;
 export default function ProductTrends() {
   let data = useSelector((state) => state.product_trends);
-  console.log(data);
+  let fillData = new Array(oneRowLen - (data.length % oneRowLen)).fill("");
   return (
     <div>
-      <div style={{ fontSize: "0.16rem" }}>Related product trends</div>
-      <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <div className={styles.prod_title}>Related product trends</div>
+      <div className={styles.prod_box}>
         {data.length > 0 ? (
           data.map((item, index) => {
             return (
-              <div
-                style={{
-                  fontSize: "0.16rem",
-                  width: "1rem",
-                  height: "1.5rem",
-                  backgroundColor: "lightblue",
-                  marginLeft: "0.1rem",
-                }}
-                key={index}
-              >
+              <div className={styles.prod_item} key={index}>
                 {item.name}
               </div>
             );
           })
         ) : (
-          <LoadingCom />
+          <LoadingCom nums={4} />
         )}
+        {fillData.map((item, index) => (
+          <div className={styles.prod_none_item} key={index}>
+            {item.name}
+          </div>
+        ))}
       </div>
     </div>
   );
