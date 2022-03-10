@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getProTtrendData } from "../redux/action";
-import "./SearchBar.less";
+import styles from "./SearchBar.less";
 
 export default function Search() {
   let inputRef = useRef();
@@ -26,7 +26,7 @@ export default function Search() {
   };
 
   return (
-    <div className="search_bar_box">
+    <div className={styles.search_bar_box}>
       <div className="bar_title">BesetSearch</div>
       <input className="bar_input" ref={inputRef} />
       <div className="bar_btn" onClick={toProductTrendsPage}>
