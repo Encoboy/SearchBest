@@ -4,7 +4,7 @@
 
 # 开发工具
 
-react 17.0.2 /n
+react 17.0.2 
 react-router 6.2.2
 react-redux 7.2.6
 redux-thunk 2.4.1
