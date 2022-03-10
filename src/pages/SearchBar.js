@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getProTtrendData } from "../redux/action";
+import "./SearchBar.less";
 
 export default function Search() {
   let inputRef = useRef();
@@ -25,15 +26,12 @@ export default function Search() {
   };
 
   return (
-    <div style={{ justifyContent: "space-around", display: "flex" }}>
-      <div style={{ fontSize: "0.2rem", flex: "1" }}>BesetSearch</div>
-      <input style={{ flex: 1, fontSize: "0.16rem" }} ref={inputRef} />
-      <button
-        style={{ flex: 1, fontSize: "0.16rem" }}
-        onClick={toProductTrendsPage}
-      >
+    <div className="search_bar_box">
+      <div className="bar_title">BesetSearch</div>
+      <input className="bar_input" ref={inputRef} />
+      <div className="bar_btn" onClick={toProductTrendsPage}>
         按钮
-      </button>
+      </div>
     </div>
   );
 }
