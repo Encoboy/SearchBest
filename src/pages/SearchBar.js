@@ -27,9 +27,11 @@ export default function Search() {
 
   return (
     <div className={styles.search_bar_box}>
-      <div className="bar_title">BesetSearch</div>
-      <input className="bar_input" ref={inputRef} />
-      <div className="bar_btn" onClick={toProductTrendsPage}>
+      <div className={styles.bar_title}>
+        <span>Beset</span>Search
+      </div>
+      <input className={styles.bar_input} ref={inputRef} />
+      <div className={styles.bar_btn} onClick={toProductTrendsPage}>
         按钮
       </div>
     </div>

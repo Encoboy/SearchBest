@@ -5,8 +5,9 @@ import ProductTrends from "../pages/ProductTrends";
 const routes = [
   { path: "/", element: <Home /> },
   {
-    path: "/search/:id",
+    path: "/search",
     element: <ProductTrends />,
+    children: [{ path: ":id", element: <ProductTrends /> }],
   },
 ];
 export default routes;
