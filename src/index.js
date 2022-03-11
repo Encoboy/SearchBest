@@ -22,7 +22,7 @@ function inMobile() {
   document.getElementsByTagName("html")[0].style.fontSize =
     (document.documentElement.clientWidth / 375) * 100 + "px";
 }
-document.addEventListener("DOMContentLoaded", inMobile);
+document.addEventListener("DOMContentLoaded", inMobile); //  DOMContentLoaded html加载和解析完之后触发，无需等待图片，样式加载完毕。load就是全部加载完毕之后触发。
 window.onresize = inMobile;
 
 ReactDOM.render(
