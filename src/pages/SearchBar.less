@@ -1,26 +1,19 @@
 .search_bar_box {
+  min-height: 0.2rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   align-items: center;
+  background-color: #fbf5e7;
+  border-bottom: 1px solid lightgray;
+  padding: 0 0.1rem;
   .bar_title {
-    font-size: 0.16rem;
-    span {
-      font-size: 0.2rem;
-      font-weight: 600;
-    }
-  }
-  .bar_input {
-    width: 2rem;
-    height: 0.2rem;
-    font-size: 0.16rem;
-  }
-  .bar_btn {
-    width: 0.3rem;
-    height: 0.2rem;
-    border: 1px solid red;
     font-size: 0.12rem;
-    text-align: center;
-    line-height: 0.2rem;
+    margin-right: 0.05rem;
+    span:first-child {
+      font-weight: 400;
+    }
+    span:nth-child(2) {
+      font-weight: 200;
+    }
   }
 }

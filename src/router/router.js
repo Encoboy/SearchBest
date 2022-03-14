@@ -1,7 +1,5 @@
 import Home from "../pages/Home";
 import ProductTrends from "../pages/ProductTrends";
-import GoodsTab from "../pages/GoodsTab";
-import GoodsTabEnhancer from "../pages/GoodsTabEnhancer";
 
 // 抽取routes
 const routes = [
@@ -11,7 +9,5 @@ const routes = [
     element: <ProductTrends />,
     children: [{ path: ":id", element: <ProductTrends /> }],
   },
-  // { path: "/goods", element: <GoodsTab /> },
-  { path: "/goods", element: <GoodsTabEnhancer /> },
 ];
 export default routes;
