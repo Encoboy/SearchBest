@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./GoodsTab.less";
-
+// 使用了react的组合模式开发
 const TabItem = ({ children }) => {
   return <div className={styles.item}>{children}</div>;
 };
@@ -62,8 +62,6 @@ export default function GoodsTab() {
       <TabItem name="angular" label="angular">
         Angular 没有人的世界
       </TabItem>
-      <Foods></Foods>
-      ssr我是来破坏的
     </Tabs>
   );
 }
