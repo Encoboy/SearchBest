@@ -14,3 +14,15 @@ export const getProTtrendData = (value) => {
     });
   };
 };
+
+export const getClientWidth = (value) => {
+  return (dispatch) => {
+    let isScalTitle;
+    if (value >= 560) {
+      isScalTitle = true;
+    } else {
+      isScalTitle = false;
+    }
+    dispatch({ type: "isBarTitleNameScal", isBarTitleNameScal: isScalTitle });
+  };
+};

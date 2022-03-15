@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className={classes.box}>
       <div className={classes.title}>Search Trends</div>
-      <HocSearchInput />
+      <HocSearchInput inputWith={"55%"} />
     </div>
   );
 }
@@ -27,8 +27,8 @@ const useStyles = makeStyles({
     alignItems: "center",
   },
   title: {
-    fontSize: "0.2rem",
-    fontWeight: 300,
-    margin: "0.2rem 0",
+    fontSize: "40px",
+    fontWeight: 340,
+    margin: "40px 0 40px 0",
   },
 });

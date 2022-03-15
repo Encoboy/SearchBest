@@ -2,6 +2,7 @@
 const init = {
   product_trends: [],
   isShowHdSeInput: false,
+  isBarTitleNameScal: true,
 };
 
 export default (state = init, action) => {
@@ -15,6 +16,11 @@ export default (state = init, action) => {
       return {
         ...state,
         isShowHdSeInput: action.isShowHdSeInput,
+      };
+    case "isBarTitleNameScal":
+      return {
+        ...state,
+        isBarTitleNameScal: action.isBarTitleNameScal,
       };
     default:
       return state;

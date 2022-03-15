@@ -4,10 +4,13 @@ import { useDispatch } from "react-redux";
 import { getProTtrendData } from "../redux/action";
 import SearchInput from "./SearchInput";
 
-export default function HocSearchInput() {
+export default function HocSearchInput(props) {
   let dispatch = useDispatch();
   let navigate = useNavigate();
   const location = useLocation();
+  let inputValue = location.pathname?.includes("search")
+    ? location.pathname.split("/")[2].split("+").join(" ")
+    : "";
   let toProductTrendsPage = (value) => {
     navigate("/search/" + value.replace(/\s+/g, "+"), {
       replace: location.pathname?.includes("search") ? true : false,
@@ -24,5 +27,8 @@ export default function HocSearchInput() {
       })
     );
   };
-  return <SearchInput searchFn={toProductTrendsPage} />;
+
+  return (
+    <SearchInput value={inputValue} searchFn={toProductTrendsPage} {...props} />
+  );
 }
