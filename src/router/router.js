@@ -1,5 +1,6 @@
 import Home from "../pages/Home";
 import ProductTrends from "../pages/ProductTrends";
+import OrderExcutionText from "../pages/OrderExecutionTest";
 
 // 抽取routes
 const routes = [
@@ -9,5 +10,6 @@ const routes = [
     element: <ProductTrends />,
     children: [{ path: ":id", element: <ProductTrends /> }],
   },
+  { path: "/order", element: <OrderExcutionText /> },
 ];
 export default routes;
