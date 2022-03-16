@@ -1,5 +1,5 @@
 /**
- * 一个高阶组件，实现控制组件按顺序执行渲染
+ * 一个高阶组件，实现控制组件执行渲染 A渲染完才开始B渲染，B渲染完才开始C渲染
  */
 import React, { Component, useEffect } from "react";
 
@@ -44,7 +44,7 @@ export default function HocOrderExecution() {
   };
 }
 
-// other
+// other code
 // export default function HocOrderExecution() {
 //   const renderQueue = []; /* 待渲染队列 */
 //   return function Hoc(Component) {
